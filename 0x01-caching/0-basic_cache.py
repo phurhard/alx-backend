@@ -9,15 +9,15 @@ class BasicCache(BaseCaching):
     """A basic caching system"""
     def __init__(self):
         """Initializer"""
-        super()
+        super().__init__()
 
     def put(self, key, item):
         """Assigs the item to the key in the cache database"""
-        if key == None or item == None:
+        if key is None or item is None:
             return
         else:
-            self.cached_data[key] = item
+            self.cache_data[key] = item
 
     def get(self, key):
         """Gets the value of the key"""
-        return self.cached_data(key)
+        return self.cache_data.get(key)
