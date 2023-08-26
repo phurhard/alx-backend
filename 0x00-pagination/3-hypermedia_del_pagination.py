@@ -50,4 +50,3 @@ class Server:
         hyper_del = {"index": index, "next_index": nxt_index,
                      "page_size": pageSize, "data": data}
         return hyper_del
-    
