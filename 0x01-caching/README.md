@@ -1,0 +1,1 @@
+# Caching process is the act of saving frequently used data to improve accessibility
