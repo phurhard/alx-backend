@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-""""caching"""
+"""caching is a process of
+saving data on the RAM"""
 
 
 from base_caching import BaseCaching
