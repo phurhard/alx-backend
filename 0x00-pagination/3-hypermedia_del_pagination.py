@@ -40,4 +40,12 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-            pass
+            """Dataset returned regardless of deletion"""
+            indexDataset = self.__indexed_dataset
+            assert (index <= len(indexDataset))
+            nxt_index = (index + page_size)
+            data = [indexDataset[k] for k in indexDataset.keys() if k in range(index, page_size)]
+            pageSize = "len(data)"
+            hyper_del = {"index": index, "next_index": nxt_index,
+                         "page_size": pageSize, "data": data}
+            return hyper_del
