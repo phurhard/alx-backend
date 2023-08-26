@@ -44,7 +44,7 @@ class Server:
             indexDataset = self.__indexed_dataset
             assert (index <= len(indexDataset))
             nxt_index = (index + page_size)
-            data = [indexDataset[k] for k in indexDataset.keys() if k in range(index, page_size)]
+            data = [indexDataset for k in indexDataset.keys() if k in range(index, page_size)]
             pageSize = "len(data)"
             hyper_del = {"index": index, "next_index": nxt_index,
                          "page_size": pageSize, "data": data}
