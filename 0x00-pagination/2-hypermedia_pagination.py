@@ -45,7 +45,7 @@ class Server:
         """returns same as get_page but this time it's hyper sensitive"""
         self.dataset()
         total_pages = (len(self.__dataset) + page_size - 1) // page_size
-        next_page = page + 1 if 1 <= page <= total_pages else None
+        next_page = page + 1 if page <= total_pages else None
         prev_page = page - 1 if 1 != page else None
         data = self.get_page(page, page_size)
         hyper = {"page_size": len(data),  "page": page, "data": data,
