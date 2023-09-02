@@ -41,10 +41,6 @@ def before_request():
     user = get_user()
     # print(f'get user: {get_user()}')
     g.user = user
-    if g.user["name"]:
-       Username = g.user["name"]
-    else:
-        pass
 
 
 def get_user():
