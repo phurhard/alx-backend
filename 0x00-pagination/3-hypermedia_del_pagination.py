@@ -23,7 +23,7 @@ class Server:
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
-                dataset = [row for row in reader]
+                dataset = list(reader)
             self.__dataset = dataset[1:]
 
         return self.__dataset
@@ -47,6 +47,9 @@ class Server:
         data = [indexDataset for k in indexDataset.keys()
                 if k in range(index, page_size)]
         pageSize = "len(data)"
-        hyper_del = {"index": index, "next_index": nxt_index,
-                     "page_size": pageSize, "data": data}
-        return hyper_del
+        return {
+            "index": index,
+            "next_index": nxt_index,
+            "page_size": pageSize,
+            "data": data,
+        }

@@ -18,13 +18,12 @@ class FIFOCache(BaseCaching):
         """ Assigns an item to its key"""
         if key is None or item is None:
             return
-        else:
-            self.cache_data[key] = item
-            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                old_key = self.keys_order.pop(0)
-                del self.cache_data[old_key]
-                print(f'DISCARD: {old_key}')
-            self.keys_order.append(key)
+        self.cache_data[key] = item
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            old_key = self.keys_order.pop(0)
+            del self.cache_data[old_key]
+            print(f'DISCARD: {old_key}')
+        self.keys_order.append(key)
 
     def get(self, key):
         """Returns the values assocoated eoth the key"""

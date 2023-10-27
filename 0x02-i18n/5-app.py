@@ -47,10 +47,9 @@ def get_user():
     """Users login simulation"""
     if 'login_as' not in request.args.keys():
         return None
-    else:
-        id = request.args["login_as"]
-        id = int(id)
-        return users.get(id, None)
+    id = request.args["login_as"]
+    id = int(id)
+    return users.get(id, None)
 
 
 @app.route('/')

@@ -42,19 +42,16 @@ def before_request():
     # print(f'get user: {get_user()}')
     g.user = user
     if g.user["name"]:
-       Username = g.user["name"]
-    else:
-        pass
+        Username = g.user["name"]
 
 
 def get_user():
     """Users login simulation"""
     if 'login_as' not in request.args.keys():
         return None
-    else:
-        id = request.args["login_as"]
-        id = int(id)
-        return users.get(id, None)
+    id = request.args["login_as"]
+    id = int(id)
+    return users.get(id, None)
 
 
 @app.route('/')
