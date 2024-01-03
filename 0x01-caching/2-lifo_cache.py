@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" FIFO cache implementation"""
+""" LIFO cache implementation"""
 
 
 from base_caching import BaseCaching
@@ -28,4 +28,6 @@ class LIFOCache(BaseCaching):
 
     def get(self, key):
         """Returns the values assocoated eoth the key"""
+        if key is None:
+            return None
         return self.cache_data.get(key)
