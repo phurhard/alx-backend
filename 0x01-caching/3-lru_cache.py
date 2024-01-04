@@ -13,13 +13,19 @@ class LRUCache(BaseCaching):
     def put(self, key, item):
         """Put key/item in the cache while using the LRUCache
         if the cache gets filled up"""
+        age_bit = []
+
         if key is None or item is None:
             return
+        self.cache_data[key] = item
+        age_bit.append(key)
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+
             pass
 
     def get(self, key):
         """Get the item in the cache with the provided key"""
         if key is None:
             return None
-        return self.cache_data.get(key)
+        else:
+            return self.cache_data.get(key)
