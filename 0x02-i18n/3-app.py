@@ -27,8 +27,9 @@ def get_locale():
 @app.route('/')
 def hello():
     """Render the home page with internationalized content"""
-    title = babel.gettext('Welcome to Holberton')
-    header = babel.gettext('Hello world!')
+    with babel.test_request_context():
+        title = babel.gettext('Welcome to Holberton')
+        header = babel.gettext('Hello world!')
     return render_template("3-index.html", title=title, header=header)
 
 
