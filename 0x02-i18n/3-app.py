@@ -16,7 +16,7 @@ babel = Babel(app)
 app.config.from_object(Config)
 
 
-@babel.localeselector
+# @babel.localeselector
 def get_locale():
     """Set the default locale and timestamp"""
     return request.accept_languages.best_match(app.config["LANGUAGES"])
