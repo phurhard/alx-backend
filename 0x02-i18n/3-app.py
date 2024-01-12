@@ -3,6 +3,7 @@
 localization module"""
 from flask import Flask, render_template, request
 from flask_babel import Babel
+from flask_babel import _
 
 
 class Config:
@@ -28,8 +29,8 @@ def get_locale():
 def hello():
     """Render the home page with internationalized content"""
     # with babel.test_request_context():
-    title = Babel._('Welcome to Holberton')
-    header = Babel._('Hello world!')
+    title = _('Welcome to Holberton')
+    header = _('Hello world!')
     return render_template("3-index.html", title=title, header=header)
 
 
