@@ -16,7 +16,7 @@ babel = Babel(app)
 app.config.from_object(Config)
 
 
-# @babel.localeselector
+@babel.localeselector
 def get_locale():
     """Set the default locale and timestamp"""
     return request.accept_languages.best_match(app.config["LANGUAGES"])
@@ -26,8 +26,8 @@ def get_locale():
 def hello():
     """This is a basic setup of flask"""
     title = _('Welcome to Holberton')
-    home = _('Hello world!')
-    return render_template("3-index.html", title=title, home=home)
+    header = _('Hello world!')
+    return render_template("3-index.html", title=title, header=header)
 
 
 if __name__ == "__main__":
