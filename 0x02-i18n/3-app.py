@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Flask Babel internalization and localization module"""
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, _
 
 
 class Config:
@@ -25,7 +25,9 @@ def get_locale():
 @app.route('/')
 def hello():
     """This is a basic setup of flask"""
-    return render_template("3-index.html")
+    title = _('Welcome to Holberton')
+    home = _('Hello world!')
+    return render_template("3-index.html", title=title, home=home)
 
 
 if __name__ == "__main__":
