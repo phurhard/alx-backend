@@ -2,7 +2,7 @@
 """Flask Babel internalization and
 localization module"""
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 class Config:
@@ -27,8 +27,8 @@ def get_locale():
 @app.route('/')
 def hello():
     """Render the home page with internationalized content"""
-    title = _('Welcome to Holberton')
-    header = _('Hello world!')
+    title = babel.gettext('Welcome to Holberton')
+    header = babel.gettext('Hello world!')
     return render_template("3-index.html", title=title, header=header)
 
 
