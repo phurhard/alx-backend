@@ -31,8 +31,8 @@ def get_locale():
 @app.route('/')
 def hello():
     """This is a basic setup of flask"""
-    title = _('Welcome to Holberton')
-    header = _('Hello world!')
+    # title = _('Welcome to Holberton')
+    # header = _('Hello world!')
     return render_template("4-index.html")
 
 
