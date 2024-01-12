@@ -28,8 +28,8 @@ def get_locale():
 def hello():
     """Render the home page with internationalized content"""
     with babel.test_request_context():
-        title = babel.gettext('Welcome to Holberton')
-        header = babel.gettext('Hello world!')
+        title = Babel.gettext('Welcome to Holberton')
+        header = Babel.gettext('Hello world!')
     return render_template("3-index.html", title=title, header=header)
 
 
