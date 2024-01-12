@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Flask Babel internalization and
+localization module"""
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
 
