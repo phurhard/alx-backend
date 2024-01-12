@@ -33,7 +33,7 @@ def hello():
     """This is a basic setup of flask"""
     title = _('Welcome to Holberton')
     header = _('Hello world!')
-    return render_template("4-index.html", title=title, header=header)
+    return render_template("4-index.html")
 
 
 if __name__ == "__main__":
