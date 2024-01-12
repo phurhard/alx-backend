@@ -2,7 +2,6 @@
 """Flask Babel internalization and localization module"""
 from flask import Flask, render_template, request
 from flask_babel import Babel
-_ = Babel.gettext
 
 
 class Config:
