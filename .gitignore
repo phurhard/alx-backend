@@ -2,3 +2,5 @@
 venv/*
 */__pycache__/*
 0x02-i18nn/*
+*/redis*
+*/node_modules/*
