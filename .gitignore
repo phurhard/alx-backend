@@ -4,3 +4,4 @@ venv/*
 0x02-i18nn/*
 */redis*
 */node_modules/*
+node_modules/*
